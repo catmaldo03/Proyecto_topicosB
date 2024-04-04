@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de granja</title>
+    <title>Document</title>
+    <style src="index.css"></style>
+    
 </head>
 <body>
-    
+<canvas></canvas>
+<script src="index.js"></script>
 </body>
 </html>
