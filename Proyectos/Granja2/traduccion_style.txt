@@ -1,0 +1,26 @@
+(clase) gameWrapper = fondoJuego
+(id) CoopBuyOption = OpcionComprarMercado -> (clase) coop-buy = comprar-mercado
+(id) Coop = HabitatCerdos -> (clase) coop = habitat-cerdos
+(id) CoopExpansionWrapper = InterfazCompraMercado -> (clase) confirm-wrapper = confirmar-compra-mercado
+(id) closeCoopConfirm = CerrarCompraMercado -> (clase) close = cerrar
+(clase) text = texto
+(clase) buttons = botones
+(clase) button = boton
+(clase) no = no  <--->  yes = si
+(id) cropChooserWrapper = interfazSeleccionCultivo -> (clase) crop-chooser = cultivo-seleccion
+(clase) footer = debajo
+(clase) crop-type-option = opcion-tipo-cultivo 
+(id) (clase) plotWrapper = opcionesSeleccionCultivo
+(clase) plotBox = espacioParcela
+(id) moneyBox = espacioMoneda
+(id) MoneyBoxMessage = EspacioMonedaMensaje
+(id) UIMessageWraper = InterfazMensajeUI
+(id) ConfirmWrapper = InterfazConfirmacion -> (clase) confirm-wrapper = interfaz-confirmacion
+(clase) seed-selection = seleccion-semilla
+(clase) plotBoxSaved = espacioParcelaGuardado
+(id) closeConfirm = confirmarCierre -> (clase) close = cerrar
+(clase) corn = maiz
+(clase) profit = beneficio
+(clase) time = tiempo
+(clase) cost = costo
+(clase) hide = esconder

@@ -1,0 +1,425 @@
+/* Estilo General */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    min-height: 620px;
+    min-width: 500px;
+    background-color: #92c96c;
+}
+html body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La pantalla donde funciona el juego */
+.fondoJuego {
+    box-sizing: border-box;
+    height: 600px;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 12;
+    background-image: url(img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+/* Como se muestra por pantalla el mercado */
+.fondoJuego .comprar-mercado {
+    position: absolute;
+    top: 16px;
+    left: 320px;
+    background-image: url(img/mercado.png);
+    height: 180px;
+    width: 140px;
+    background-size: initial;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    cursor: pointer;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    transition: transform 0.1s ease-out;
+}
+.fondoJuego .comprar-mercado:hover {
+    transform: scale(1.1);
+}
+/* Como se muestra por pantalla los establos */
+.fondoJuego .habitat-cerdos {
+    background-image: url(img/habitat-cerdos.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+.fondoJuego .habitat-cerdos.mostrar {
+    display: block;
+}
+.fondoJuego .confirmar-compra-mercado {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 90%;
+    box-sizing: border-box;
+    background: #576f46;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s linear;
+    align-content: flex-start;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    position: absolute;
+    padding: 40px 20px 20px 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.4em;
+    transform: scale(0);
+}
+.fondoJuego .confirmar-compra-mercado .cerrar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 800;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+.fondoJuego .confirmar-compra-mercado .cerrar svg {
+    height: 20px;
+    width: 20px;
+}
+.fondoJuego .confirmar-compra-mercado .cerrar svg polygon:last-of-type{
+    fill: #ffd515;
+}
+.fondoJuego .confirmar-compra-mercado .cerrar svg polygon:first-of-type{
+    fill: rgba(0, 0, 0, 0.5);
+}
+.fondoJuego .confirmar-compra-mercado .cerrar svg:hover polygon:last-of-type {
+    fill: #ff4345 !important;  
+}
+.fondoJuego .confirmar-compra-mercado .texto {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.fondoJuego .confirmar-compra-mercado .botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fondojuego .confirmar-compra-mercado .botones .boton{
+    background: white;
+    padding: 5px 20px;
+    color: #415234;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 2px solid #415234;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.fondojuego .confirmar-compra-mercado .botones-compra-mercado .boton:hover{
+    background: #68a73c;
+    color: white;
+    border: 2px solid white;
+}
+.fondoJuego .confirmar-compra-mercado.mostrar {
+    transform: scale(1);
+}
+
+.fondoJuego .cultivo-seleccion {
+    display: flex;
+    flex-wrap: wrap;
+    height: 320px;
+    width: 320px;
+    box-sizing: border-box;
+    background: #92c96c;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: scale(0);
+    transition: all 0.2s linear;
+    align-content: flex-start;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+.fondoJuego .cultivo-seleccion .arriba {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #69240a;
+    font-weight: 700;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fondoJuego .cultivo-seleccion .debajo {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.fondoJuego .cultivo-seleccion .cerrar {
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 800;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+.fondoJuego .cultivo-seleccion .cerrar svg {
+    height: 20px;
+    width: 20px;
+}
+.fondoJuego .cultivo-seleccion .cerrar svg polygon:last-of-type {
+    fill: #904b2f;
+}
+.fondoJuego .cultivo-seleccion .cerrar svg polygon:first-of-type {
+    fill: rgba(0, 0, 0, 0.5);
+}
+.fondoJuego .cultivo-seleccion .cerrar svg:hover polygon:last-of-type {
+    fill: #ff422c !important;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo {
+    height: 80px;
+    width: 80px;
+    background: #73450c;
+    position: relative;
+    cursor: pointer;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo .descripciones-tipo-cultivo {
+    color: black;
+    font-size: 13px;
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 600;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo .descripciones-tipo-cultivo .nombre {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo .descripciones-tipo-cultivo div {
+    padding-bottom: 5px;
+    width: 100%;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo.maiz {
+    background-image: url("img/maiz.png");
+    background-position: -200px;
+    background-position: -400px;
+    background-size: auto 80px;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo.maiz.esconder {
+    opacity: 0.5;
+}
+.fondoJuego .cultivo-seleccion .opcion-tipo-cultivo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.45);
+}
+.fondoJuego .cultivo-seleccion.mostrar {
+    transform: scale(1);
+}
+
+.fondoJuego .interfazParcela {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 320px;
+    width: 320px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 75px;
+    transform: scale(0.9);
+}
+.fondoJuego .interfazParcela .espacioParcela {
+    border: 2px solid #a05b4a;
+    position: relative;
+    box-sizing: border-box;
+    height: 80px;
+    width: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("https://i.imgur.com/T7oQsTN.png");
+}
+.fondoJuego .interfazParcela .espacioParcela.disponible {
+    background-position: 0px;
+    background-size: auto 80px;
+    -webkit-animation: availablePlotAnim 0.8s linear infinite alternate;
+    animation: availablePlotAnim 0.8s linear infinite alternate;
+}
+.fondoJuego .interfazParcela .espacioParcela.lista {
+    -webkit-animation: plotReadyAnim 0.7s linear alternate infinite;
+    animation: plotReadyAnim 0.7s linear alternate infinite;
+}
+.fondoJuego .interfazParcela .espacioParcela.parcela {
+    background-position: 0px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela.semilla-maiz {
+    background-position: -80px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela.inicio-maiz {
+    background-position: -160px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela.adolecente-maiz {
+    background-position: -240px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela.maduro-maiz {
+    background-position: -320px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela.adulto-maiz {
+    background-position: -400px;
+    background-size: auto 80px;
+}
+.fondoJuego .interfazParcela .espacioParcela:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: #4f1507;
+}
+.fondoJuego .interfazParcela .espacioParcela:hover .tooltip {
+    opacity: 0.95;
+}
+  
+.UIInterfaz {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.UIInterfaz .monedas,
+.UIInterfaz .semillas {
+    position: relative;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.UIInterfaz .monedas .emblema,
+.UIInterfaz .semillas .emblema {
+    height: 40px;
+    width: 40px;
+    background-color: #823c3d;
+    background-image: url(https://art.pixilart.com/7736b1d30d303e4.gif);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    border-radius: 40px;
+    border: 2px solid #351a1a;
+    z-index: 2;
+}
+.UIInterfaz .monedas .texto,
+.UIInterfaz .semillas .texto {
+    background: linear-gradient(180deg, #b2875a 80%, #705135 80%);
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 40px;
+    padding: 0px 20px 0px 54px;
+    margin-left: -40px;
+    border: 2px solid #351a1a;
+}
+.UIInterfaz .monedas .texto span,
+.UIInterfaz .semillas .texto span {
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+}
+.UIInterfaz .monedas .mensaje,
+.UIInterfaz .semillas .mensaje {
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+    color: white;
+    font-size: 14px;
+    text-shadow: 3px 4px 4px black;
+    opacity: 0;
+}
+.UIInterfaz .semillas {
+    display: none;
+}
+.UIInterfaz .semillas .emblema {
+    border-color: #35e835;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQQqoSo3DNWGMOk5Hy6diLHRpE6h3o_Uw7qT5m3UMvcZZbt3DGv);
+    background-size: 90px;
+    background-position: 50% 50%;
+}
+.UIInterfaz .semillas .texto {
+    border-color: #35e835;
+  }
+.UIInterfaz .semillas .texto span {
+    color: #03a703;
+}
+  
+.InterfazMensajeUI {
+    width: 100%;
+    position: absolute;
+    top: 162px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    z-index: 100;
+}
+.InterfazMensajeUI .mensaje {
+    background: white;
+    padding: 5px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 25px;
+    opacity: 0;
+}
+  
+.esconder {
+    display: none !important;
+}

@@ -1,0 +1,49 @@
+                          VARIABLES
+
+NumPlots = num_parcela
+Money = monedas
+PlotCost = costo_parcela
+SeedCostT1 = costo_semilla
+counterLimitT1 = tiempo_semilla
+ProfitT1 = beneficio_semilla
+coopProfit = beneficio_cerdo
+
+cropChooserWrapper = interfazSeleccionCultivo
+cropChooserOptions = opcionesSeleccionCultivo
+plotWrapper = opcionesSeleccionCultivo
+plot = parcela
+MoneyBox = EspacioMoneda
+MoneyBoxMessage = EspacioMonedaMensaje
+BottomMessageUI = MensajeAbajoUI
+ConfirmWrapper = InterfazConfirmacion
+ConfirmWrapperOptions = OpcionesInterfazConfirmacion
+
+seedSelection = seleccionSemilla
+
+coopBuyOption = opcionComprarMercado
+coopBuyOptions = opcionesCompraMercado
+CoopExpansionWrapper = InterfazCompraMercado
+Coop = HabitatCerdos
+spawnSavedPlot = spawn_parcela
+NumPlotsFromStorage = parcela_Almacenadas
+MoneyFromStorage = monedas_Almacenadas
+NumMoney = num_monedas
+CoopPurchased = Habitat_comprados
+CoopFromStorage = HabitatCerdo_Guardado
+moneyAmount = cantidadMonedas
+
+
+                         FUNCIONES
+showTheCoop = mostrarHabitat
+runTheCoop = ejecutarHabitat
+disableCoopPurchase = desactivarCompraHabitat
+animateMoneyTooltip = animacionMonedas
+buyTheCoop = comprarHabitat
+SaveMoneyAmmount = GuardarMonedas
+animateBottomUITooltip = animarBotonUI
+hideCoopMenu = ocultarMenuHabitat
+SaveNumPlots = GuardarParcelas
+hideConfirmMenu = ocultarMenuConfirmacion
+showConfirmMenu = mostrarMenuConfirmacion
+hideSeedSelectionMenu =ocultarSeleccionSemillaMenu
+showSeedSelectionMenu = mostrarSeleccioSemillaMenu
